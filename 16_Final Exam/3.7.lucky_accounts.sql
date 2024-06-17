@@ -1,0 +1,17 @@
+SELECT
+	a.id || ' ' || a.username AS id_username,
+	a.email
+FROM
+	accounts AS a
+JOIN
+	accounts_photos AS ap
+ON
+	a.id= ap.account_id
+JOIN
+	photos AS p
+ON
+	p.id = ap.photo_id
+WHERE
+	p.id = a.id
+ORDER BY
+	a.id ASC;
